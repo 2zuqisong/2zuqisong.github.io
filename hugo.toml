@@ -1,4 +1,4 @@
 baseURL = 'https://2zuqisong.github.io/'
 languageCode = 'en-us'
 title = 'zuqisong-Site'
-theme = "hugo-book"
+theme = "PaperMod"
