@@ -1,41 +1,38 @@
-name: Deploy Hugo Blog
+name: GitHub Pages
 
 on:
   push:
     branches:
-      - main  # 当 main 分支有更新时触发部署
+      - main  # Set a branch name to trigger deployment
+  pull_request:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
-
+    runs-on: ubuntu-22.04
+    permissions:
+      contents: write
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
     steps:
-      # 1️⃣ Checkout 仓库
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v3
         with:
-          submodules: true
-          fetch-depth: 0  # 保留完整 Git 历史，用于 enableGitInfo
+          submodules: true  # Fetch Hugo themes (true OR recursive)
+          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
 
-      # 2️⃣ 安装 Hugo
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: '0.146.0'
+          hugo-version: '0.110.0'
 
-      # 3️⃣ 构建 Hugo 网站
-      - name: Build site
-        run: hugo --minify --theme hugo-book
+      - name: Build
+        run: hugo --minify
 
-      # 4️⃣ 添加 .nojekyll 避免 Jekyll 构建
-      - name: Disable Jekyll
-        run: touch ./public/.nojekyll
-
-      # 5️⃣ 部署到 gh-pages 分支
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        # If you're changing the branch from main,
+        # also change the `main` in `refs/heads/main`
+        # below accordingly.
+        if: github.ref == 'refs/heads/main'
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
-          publish_branch: gh-pages  # 指定部署分支
-          keep_files: true           # 保留不在 Hugo 生成目录里的其他文件（可选）
