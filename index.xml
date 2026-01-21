@@ -1,2 +1,42 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>zuqisong-Site</title><link>https://2zuqisong.github.io/</link><description>Recent content on zuqisong-Site</description><generator>Hugo -- 0.146.0</generator><language>en-us</language><lastBuildDate>Wed, 21 Jan 2026 02:18:09 +0800</lastBuildDate><atom:link href="https://2zuqisong.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>2026 1 21</title><link>https://2zuqisong.github.io/posts/2026-1-21/</link><pubDate>Wed, 21 Jan 2026 02:18:09 +0800</pubDate><guid>https://2zuqisong.github.io/posts/2026-1-21/</guid><description>&lt;pre>&lt;code>hello!
-&lt;/code>&lt;/pre></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>zuqisong-Site</title><link>https://2zuqisong.github.io/</link><description>Recent content on zuqisong-Site</description><generator>Hugo -- 0.146.0</generator><language>en-us</language><lastBuildDate>Wed, 21 Jan 2026 02:18:09 +0800</lastBuildDate><atom:link href="https://2zuqisong.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>2026 1 21</title><link>https://2zuqisong.github.io/posts/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</link><pubDate>Wed, 21 Jan 2026 02:18:09 +0800</pubDate><guid>https://2zuqisong.github.io/posts/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</guid><description>&lt;h1 id="一什么是动态规划">一、什么是动态规划&lt;/h1>
+&lt;blockquote>
+&lt;p>&lt;strong>动态规划 = 把一个复杂问题拆成很多“有规律、会重复”的小问题，
+把小问题的答案保存下来，逐步得到大问题的答案。&lt;/strong>&lt;/p>&lt;/blockquote>
+&lt;p>核心思想只有两个字：
+👉 &lt;strong>“记住”&lt;/strong>&lt;/p>
+&lt;hr>
+&lt;h1 id="二什么时候应该想到动态规划题目特点">二、什么时候应该想到「动态规划」？（题目特点）&lt;/h1>
+&lt;p>一道题 &lt;strong>非常可能是 DP&lt;/strong>，通常会有以下特征中的 &lt;strong>2 个以上&lt;/strong>：&lt;/p>
+&lt;hr>
+&lt;h2 id="-特点-1题目在问最值--可行性--方案数">✅ 特点 1：题目在问「最值 / 可行性 / 方案数」&lt;/h2>
+&lt;p>例如：&lt;/p>
+&lt;ul>
+&lt;li>最大 / 最小&lt;/li>
+&lt;li>最长 / 最短&lt;/li>
+&lt;li>能不能做到（true / false）&lt;/li>
+&lt;li>有多少种方案&lt;/li>
+&lt;/ul>
+&lt;p>📌 &lt;strong>DP 最擅长：&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>最优解&lt;/li>
+&lt;li>累积结果&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="-特点-2题目中出现前-i-个--到第-i-步--某个区间">✅ 特点 2：题目中出现「前 i 个 / 到第 i 步 / 某个区间」&lt;/h2>
+&lt;p>例如：&lt;/p>
+&lt;ul>
+&lt;li>前 i 个数&lt;/li>
+&lt;li>到第 i 天&lt;/li>
+&lt;li>走到第 i 个位置&lt;/li>
+&lt;li>区间 [i, j]&lt;/li>
+&lt;/ul>
+&lt;p>👉 说明问题可以&lt;strong>分阶段解决&lt;/strong>&lt;/p>
+&lt;hr>
+&lt;h2 id="-特点-3当前选择只和之前的状态有关">✅ 特点 3：当前选择只和“之前的状态”有关&lt;/h2>
+&lt;p>比如：&lt;/p>
+&lt;ul>
+&lt;li>今天是否买股票，只和昨天有关&lt;/li>
+&lt;li>走到当前格子，只和左边 / 上边有关&lt;/li>
+&lt;li>选不选第 i 个数，只和前 i-1 个有关&lt;/li>
+&lt;/ul>
+&lt;p>👉 &lt;strong>无后效性（这是 DP 能成立的前提）&lt;/strong>&lt;/p></description></item></channel></rss>
